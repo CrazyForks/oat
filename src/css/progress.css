@@ -38,6 +38,7 @@
       background: var(--lm-muted);
       border: none;
       border-radius: var(--lm-radius-full);
+      height: var(--lm-bar-height);
     }
 
     &::-webkit-meter-optimum-value,
