@@ -1,10 +1,10 @@
 +++
-title = "12-column grid"
+title = "Grid"
 weight = 170
 description = "12-column responsive grid using container queries and CSS flex."
 +++
 
-Use `.container`, `.row`, and `.col` classes. Column widths use `.col-{n}` and responsive variants like `.col-medium-{n}`.
+A classic 12-column grid using flexbox. Use `.container`, `.row`, and `.col` classes. Column widths use `.col-{n}` and responsive variants like `.col-medium-{n}`.
 
 {% demo() %}
 ```html

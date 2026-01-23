@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.lm-demo').forEach(demo => {
+  document.querySelectorAll('.ot-demo').forEach(demo => {
     const pre = demo.querySelector('pre');
     if (!pre) return;
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Create tabbed interface.
     demo.innerHTML = `
-      <lm-tabs>
+      <ot-tabs>
         <div role="tablist">
           <button role="tab">⧉ Preview</button>
           <button role="tab">{} Code</button>
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="demo-box"><div class="demo-content">${rawHTML}</div></div>
         </div>
         <div role="tabpanel"></div>
-      </lm-tabs>
+      </ot-tabs>
     `;
 
     // Move the original Zola syntax-highlighted <pre> into the Code tab.
-    demo.querySelector(':scope > lm-tabs > [role="tabpanel"]:last-child').appendChild(pre);
+    demo.querySelector(':scope > ot-tabs > [role="tabpanel"]:last-child').appendChild(pre);
   });
 });

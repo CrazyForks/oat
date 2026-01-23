@@ -1,9 +1,9 @@
 +++
 title = "Customizing"
-description = "Customize and theme lmui by overriding CSS variables"
+description = "Customize and theme Oat by overriding CSS variables"
 +++
 
-Pretty much all properties of lmui are defined as CSS variables that can be overridden. See [theme.css](#) to see all variables. To override, redefine them in a CSS file in your project and include after the lib's CSS files.
+Pretty much all properties of Oat are defined as CSS variables that can be overridden. See [theme.css](#) to see all variables. To override, redefine them in a CSS file in your project and include after the lib's CSS files.
 
 ## Theming
 
@@ -89,7 +89,7 @@ Adding `data-theme="dark"` to `<body>` applies the dark theme. Customize the dar
 
 # Picking and choosing
 
-While it is quite okay to bundle all of lmui given how tiny it is (CSS %KB, JS %KB), it is possible to include components selectively.
+While it is quite okay to bundle all of Oat given how tiny it is (CSS %KB, JS %KB), it is possible to include components selectively.
 
 #### Must include
 - `01-reset.css`

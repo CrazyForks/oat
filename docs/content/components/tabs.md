@@ -7,11 +7,11 @@ description = "Tabbed interface using a custom WebComponent and semantic behavio
 webcomponent = true
 +++
 
-Wrap tab buttons and panels in `<lm-tabs>`. Use `role="tablist"`, `role="tab"`, and `role="tabpanel"`.
+Wrap tab buttons and panels in `<ot-tabs>`. Use `role="tablist"`, `role="tab"`, and `role="tabpanel"`.
 
 {% demo() %}
 ```html
-<lm-tabs>
+<ot-tabs>
   <div role="tablist">
     <button role="tab">Account</button>
     <button role="tab">Password</button>
@@ -29,6 +29,6 @@ Wrap tab buttons and panels in `<lm-tabs>`. Use `role="tablist"`, `role="tab"`, 
     <h3>Notification Settings</h3>
     <p>Configure your notification preferences.</p>
   </div>
-</lm-tabs>
+</ot-tabs>
 ```
 {% end %}

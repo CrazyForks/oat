@@ -1,4 +1,4 @@
-# lmui - Build System
+# oat - Build System
 # Requires: esbuild
 
 .PHONY: dist css js clean size
@@ -31,17 +31,17 @@ dist: css js
 
 css:
 	@mkdir -p dist
-	@cat $(CSS_FILES) > dist/longterm.css
-	@esbuild dist/longterm.css --minify --outfile=dist/longterm.min.css
-	@cp dist/longterm.min.css docs/static/longterm.min.css
-	@echo "CSS: $$(wc -c < dist/longterm.min.css | tr -d ' ') bytes (minified)"
+	@cat $(CSS_FILES) > dist/oat.css
+	@esbuild dist/oat.css --minify --outfile=dist/oat.min.css
+	@cp dist/oat.min.css docs/static/oat.min.css
+	@echo "CSS: $$(wc -c < dist/oat.min.css | tr -d ' ') bytes (minified)"
 
 js:
 	@mkdir -p dist
-	@cat src/js/base.js src/js/tabs.js src/js/dropdown.js src/js/toast.js src/js/tooltip.js > dist/longterm.js
-	@esbuild dist/longterm.js --minify --outfile=dist/longterm.min.js
-	@cp dist/longterm.min.js docs/static/longterm.min.js
-	@echo "JS: $$(wc -c < dist/longterm.min.js | tr -d ' ') bytes (minified)"
+	@cat src/js/base.js src/js/tabs.js src/js/dropdown.js src/js/toast.js src/js/tooltip.js > dist/oat.js
+	@esbuild dist/oat.js --minify --outfile=dist/oat.min.js
+	@cp dist/oat.min.js docs/static/oat.min.js
+	@echo "JS: $$(wc -c < dist/oat.min.js | tr -d ' ') bytes (minified)"
 
 clean:
 	@rm -rf dist
@@ -50,11 +50,11 @@ clean:
 size: dist
 	@echo ""
 	@echo "Bundle:"
-	@echo "CSS (source):   $$(wc -c < dist/longterm.css | tr -d ' ') bytes"
-	@echo "CSS (minified): $$(wc -c < dist/longterm.min.css | tr -d ' ') bytes"
-	@echo "JS (source):    $$(wc -c < dist/longterm.js | tr -d ' ') bytes"
-	@echo "JS (minified):  $$(wc -c < dist/longterm.min.js | tr -d ' ') bytes"
+	@echo "CSS (source):   $$(wc -c < dist/oat.css | tr -d ' ') bytes"
+	@echo "CSS (minified): $$(wc -c < dist/oat.min.css | tr -d ' ') bytes"
+	@echo "JS (source):    $$(wc -c < dist/oat.js | tr -d ' ') bytes"
+	@echo "JS (minified):  $$(wc -c < dist/oat.min.js | tr -d ' ') bytes"
 	@echo ""
 	@echo "Gzipped:"
-	@gzip -9 -c dist/longterm.min.css | wc -c | xargs -I {} echo "CSS (gzipped):  {} bytes"
-	@gzip -9 -c dist/longterm.min.js | wc -c | xargs -I {} echo "JS (gzipped):   {} bytes"
+	@gzip -9 -c dist/oat.min.css | wc -c | xargs -I {} echo "CSS (gzipped):  {} bytes"
+	@gzip -9 -c dist/oat.min.js | wc -c | xargs -I {} echo "JS (gzipped):   {} bytes"

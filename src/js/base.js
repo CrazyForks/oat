@@ -1,7 +1,7 @@
-// lmui - Base Web Component Class
+// oat - Base Web Component Class
 // Provides lifecycle management, event handling, and utilities.
 
-class LMBase extends HTMLElement {
+class OtBase extends HTMLElement {
   #initialized = false;
 
   // Called when element is added to DOM.
@@ -83,7 +83,7 @@ class LMBase extends HTMLElement {
 
 // Export for use in other files
 if (typeof window !== 'undefined') {
-  window.LMBase = LMBase;
+  window.OtBase = OtBase;
 }
 
 // Polyfill for command/commandfor (Safari)

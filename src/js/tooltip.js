@@ -1,5 +1,5 @@
 /**
- * lmui - Tooltip Enhancement
+ * oat - Tooltip Enhancement
  * Converts title attributes to data-tooltip for custom styling.
  * Progressive enhancement: native title works without JS.
  */

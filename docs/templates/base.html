@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ config.title }}{% endblock %}</title>
-  <link rel="stylesheet" href="/longterm.min.css">
-  <script src="/longterm.min.js" defer></script>
+  <link rel="stylesheet" href="/oat.min.css">
+  <script src="/oat.min.js" defer></script>
   <script src="/main.js"></script>
   <style>
     .demo-section {
@@ -45,7 +45,7 @@
       display: block;
     }
 
-    lm-demo.compact .demo-content {
+    ot-demo.compact .demo-content {
       max-width: 400px;
     }
 
@@ -62,12 +62,17 @@
     }
 
     .demo-sidebar {
-      width: 20rem;
-    }
-    .demo-sidebar nav small {
-      color: var(--muted-foreground);
-      font-size: var(--text-8);
-      margin-left: var(--space-2);
+      width: 18rem;
+
+      .logo {
+        text-align: center;
+        margin-bottom: var(--space-8);
+      }
+      nav sup {
+        color: var(--muted-foreground);
+        font-size: var(--text-8);
+        margin-left: var(--space-1);
+      }
     }
 
     .section-permalink {
@@ -98,33 +103,34 @@
 <body>
   <!-- Navigation Sidebar -->
   <aside class="sidebar demo-sidebar">
-    <h4 style="margin-bottom: var(--space-4);">
-      <a href="/" style="text-decoration: none; color: inherit;">lmui</a>
-    </h4>
+    <div class="logo">
+      <a href="/"><img src="/logo.svg" alt="{{ config.title }}" height="100"></a>
+    </div>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/usage/">Usage</a></li>
         <li><a href="/customizing/">Customizing</a></li>
         <li>
-      <details open>
-        <summary>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7" />
-            <rect x="14" y="3" width="7" height="7" />
-            <rect x="14" y="14" width="7" height="7" />
-            <rect x="3" y="14" width="7" height="7" />
-          </svg>
-          Components
-        </summary>
+          <details open>
+            <summary>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+              </svg>
+              Components
+            </summary>
             <ul>
-          {% set components = get_section(path="components/_index.md") %}
-          {% for page in components.pages %}
+              <li><a href="/components">All components</a></li>
+              {% set components = get_section(path="components/_index.md") %}
+              {% for page in components.pages %}
               <li><a href="/components/#{{ page.slug }}">{{ page.title }}
-                {% if page.extra.webcomponent | default(value=false) %}<small>WebComponent</small>{% endif %}</a></li>
-          {% endfor %}
+                {% if page.extra.webcomponent | default(value=false) %}<sup>WebComponent</sup>{% endif %}</a></li>
+              {% endfor %}
             </ul>
-      </details>
+          </details>
         </li>
       </ul>
     </nav>
@@ -141,7 +147,7 @@
   </div>
 
   <!-- Toast Container -->
-  <lm-toast-container></lm-toast-container>
+  <ot-toast-container></ot-toast-container>
 
   <script>
     // Theme toggle
@@ -153,7 +159,7 @@
 
     // Toast demo
     function showToast(variant) {
-      const container = document.querySelector('lm-toast-container');
+      const container = document.querySelector('ot-toast-container');
       const messages = {
         default: 'This is a default notification.',
         success: 'Your changes have been saved!',

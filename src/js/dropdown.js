@@ -1,18 +1,18 @@
 /**
- * lmui - Dropdown Component
+ * oat - Dropdown Component
  * Provides positioning, keyboard navigation, and ARIA state management.
  *
  * Usage:
- * <lm-dropdown>
+ * <ot-dropdown>
  *   <button popovertarget="menu-id">Options</button>
  *   <menu popover id="menu-id">
  *     <button role="menuitem">Item 1</button>
  *     <button role="menuitem">Item 2</button>
  *   </menu>
- * </lm-dropdown>
+ * </ot-dropdown>
  */
 
-class LMDropdown extends LMBase {
+class OtDropdown extends OtBase {
   #menu;
   #trigger;
   #position;
@@ -71,4 +71,4 @@ class LMDropdown extends LMBase {
   }
 }
 
-customElements.define('lm-dropdown', LMDropdown);
+customElements.define('ot-dropdown', OtDropdown);

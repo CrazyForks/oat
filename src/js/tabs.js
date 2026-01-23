@@ -1,19 +1,19 @@
 /**
- * lmui - Tabs Component
+ * oat - Tabs Component
  * Provides keyboard navigation and ARIA state management.
  *
  * Usage:
- * <lm-tabs>
+ * <ot-tabs>
  *   <div role="tablist">
  *     <button role="tab">Tab 1</button>
  *     <button role="tab">Tab 2</button>
  *   </div>
  *   <div role="tabpanel">Content 1</div>
  *   <div role="tabpanel">Content 2</div>
- * </lm-tabs>
+ * </ot-tabs>
  */
 
-class LMTabs extends LMBase {
+class OtTabs extends OtBase {
   #tabs = [];
   #panels = [];
 
@@ -23,7 +23,7 @@ class LMTabs extends LMBase {
     this.#panels = this.$$(':scope > [role="tabpanel"]');
 
     if (this.#tabs.length === 0 || this.#panels.length === 0) {
-      console.warn('lm-tabs: Missing tab or tabpanel elements');
+      console.warn('ot-tabs: Missing tab or tabpanel elements');
       return;
     }
 
@@ -32,8 +32,8 @@ class LMTabs extends LMBase {
       const panel = this.#panels[i];
       if (!panel) return;
 
-      const tabId = tab.id || `lm-tab-${this.uid()}`;
-      const panelId = panel.id || `lm-panel-${this.uid()}`;
+      const tabId = tab.id || `ot-tab-${this.uid()}`;
+      const panelId = panel.id || `ot-panel-${this.uid()}`;
 
       tab.id = tabId;
       panel.id = panelId;
@@ -88,7 +88,7 @@ class LMTabs extends LMBase {
       panel.hidden = i !== idx;
     });
 
-    this.emit('lm-tab-change', { index: idx, tab: this.#tabs[idx] });
+    this.emit('ot-tab-change', { index: idx, tab: this.#tabs[idx] });
   }
 
   get activeIndex() {
@@ -102,4 +102,4 @@ class LMTabs extends LMBase {
   }
 }
 
-customElements.define('lm-tabs', LMTabs);
+customElements.define('ot-tabs', OtTabs);

@@ -1,5 +1,5 @@
 base_url = "/"
-title = "lmui"
+title = "Oat UI"
 compile_sass = false
 build_search_index = false
 
@@ -8,4 +8,4 @@ highlight_code = true
 highlight_theme = "charcoal"
 
 [extra]
-description = "A minimal, semantic-first UI component library with zero dependencies"
+description = "Oat - Ultra lightweight, semantic, zero-dependency HTML UI component library"

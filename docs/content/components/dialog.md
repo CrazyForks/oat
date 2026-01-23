@@ -4,7 +4,7 @@ weight = 70
 description = "Modal dialogs using native <dialog> with command/commandfor."
 +++
 
-Fully semantic dynamic dialog with `<dialog>`. Use `commandfor` and `command="show-modal"` attributes on an element to open a target dialog.
+Fully semantic, zero-Javascript, dynamic dialog with `<dialog>`. Use `commandfor` and `command="show-modal"` attributes on an element to open a target dialog. Focus trapping, z placement, keyboard shortcuts all work out of the box.
 
 {% demo() %}
 ```html

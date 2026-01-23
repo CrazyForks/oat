@@ -4,26 +4,26 @@ weight = 160
 description = "Notification toasts with placement and stacking."
 +++
 
-Show toast notifications with `lm.toast(message, options?)`.
+Show toast notifications with `ot.toast(message, options?)`.
 
 {% demo() %}
 ```html
-<button onclick="lm.toast('Action completed successfully', 'All good', { variant: 'success' })">Success</button>
-<button onclick="lm.toast('Something went wrong', 'Oops', { variant: 'danger', placement: 'top-left' })" class="danger">Danger</button>
-<button onclick="lm.toast('Please review this warning', 'Warning', { variant: 'warning', placement: 'bottom-right' })" class="outline">Warning</button>
-<button onclick="lm.toast('New notification', 'For your attenton', { placement: 'top-center' })">Info</button>
+<button onclick="ot.toast('Action completed successfully', 'All good', { variant: 'success' })">Success</button>
+<button onclick="ot.toast('Something went wrong', 'Oops', { variant: 'danger', placement: 'top-left' })" class="danger">Danger</button>
+<button onclick="ot.toast('Please review this warning', 'Warning', { variant: 'warning', placement: 'bottom-right' })" class="outline">Warning</button>
+<button onclick="ot.toast('New notification', 'For your attenton', { placement: 'top-center' })">Info</button>
 ```
 {% end %}
 
 ## Placement
 
 ```js
-lm.toast('Top left', '', { placement: 'top-left' })
-lm.toast('Top center', '',{ placement: 'top-center' })
-lm.toast('Top right', '',{ placement: 'top-right' })  // default
-lm.toast('Bottom left', '', { placement: 'bottom-left' })
-lm.toast('Bottom center', '', { placement: 'bottom-center' })
-lm.toast('Bottom right', '',{ placement: 'bottom-right' })
+ot.toast('Top left', '', { placement: 'top-left' })
+ot.toast('Top center', '',{ placement: 'top-center' })
+ot.toast('Top right', '',{ placement: 'top-right' })  // default
+ot.toast('Bottom left', '', { placement: 'bottom-left' })
+ot.toast('Bottom center', '', { placement: 'bottom-center' })
+ot.toast('Bottom right', '',{ placement: 'bottom-right' })
 ```
 
 ## Options
@@ -36,7 +36,7 @@ lm.toast('Bottom right', '',{ placement: 'bottom-right' })
 
 ## Custom markup
 
-Use `lm.toastEl(element, options?)` to show toasts with custom HTML content.
+Use `ot.toastEl(element, options?)` to show toasts with custom HTML content.
 
 {% demo() %}
 ```html
@@ -48,7 +48,7 @@ Use `lm.toastEl(element, options?)` to show toasts with custom HTML content.
   </output>
 </template>
 
-<button onclick="lm.toastEl(document.querySelector('#undo-toast'), { duration: 8000 })">
+<button onclick="ot.toastEl(document.querySelector('#undo-toast'), { duration: 8000 })">
   Toast with action
 </button>
 ```
@@ -57,8 +57,8 @@ Use `lm.toastEl(element, options?)` to show toasts with custom HTML content.
 **From a template:**
 
 ```js
-lm.toastEl(document.querySelector('#my-template'))
-lm.toastEl(document.querySelector('#my-template'), { duration: 8000, placement: 'bottom-center' })
+ot.toastEl(document.querySelector('#my-template'))
+ot.toastEl(document.querySelector('#my-template'), { duration: 8000, placement: 'bottom-center' })
 ```
 
 **Dynamic element:**
@@ -68,7 +68,7 @@ const el = document.createElement('output');
 el.className = 'toast';
 el.setAttribute('data-variant', 'warning');
 el.innerHTML = '<h6 class="toast-title">Warning</h6><p>Custom content here</p>';
-lm.toastEl(el);
+ot.toastEl(el);
 ```
 
 The element is cloned before display, so templates can be reused.
@@ -76,6 +76,6 @@ The element is cloned before display, so templates can be reused.
 ## Clear toasts
 
 ```js
-lm.toast.clear()              // Clear all
-lm.toast.clear('top-right')   // Clear specific placement
+ot.toast.clear()              // Clear all
+ot.toast.clear('top-right')   // Clear specific placement
 ```

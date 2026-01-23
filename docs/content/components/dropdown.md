@@ -1,17 +1,17 @@
 +++
-title = "Dropdown menu"
+title = "Dropdown"
 weight = 80
-description = "Popover menus using the native popover API. Supports keyboard navigation."
+description = "Dropdown menus using the native popover API. Supports keyboard navigation."
 
 [extra]
 webcomponent = true
 +++
 
-Wrap in `<lm-dropdown>`. Use `popovertarget` on the trigger and `popover` on the `<menu>`. Items use `role="menuitem"`.
+Wrap in `<ot-dropdown>`. Use `popovertarget` on the trigger and `popover` on the `<menu>`. Items use `role="menuitem"`.
 
 {% demo() %}
 ```html
-<lm-dropdown>
+<ot-dropdown>
   <button popovertarget="demo-menu" class="outline">
     Options
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6" /></svg>
@@ -23,6 +23,6 @@ Wrap in `<lm-dropdown>`. Use `popovertarget` on the trigger and `popover` on the
     <hr>
     <button role="menuitem">Logout</button>
   </menu>
-</lm-dropdown>
+</ot-dropdown>
 ```
 {% end %}

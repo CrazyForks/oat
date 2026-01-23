@@ -1,19 +1,19 @@
 /**
- * lmui - Toast Notifications
+ * oat - Toast Notifications
  *
  * Usage:
- *   lm.toast('Saved!')
- *   lm.toast('Saved!', 'Your changes have been saved.')
- *   lm.toast('Success', 'Operation completed.', { variant: 'success' })
- *   lm.toast('Error', 'Something went wrong.', { variant: 'danger', placement: 'bottom-center' })
+ *   ot.toast('Saved!')
+ *   ot.toast('Saved!', 'Your changes have been saved.')
+ *   ot.toast('Success', 'Operation completed.', { variant: 'success' })
+ *   ot.toast('Error', 'Something went wrong.', { variant: 'danger', placement: 'bottom-center' })
  *
  *   // Custom markup
- *   lm.toastEl(element)
- *   lm.toastEl(element, { duration: 4000, placement: 'bottom-center' })
- *   lm.toastEl(document.querySelector('#my-template'))
+ *   ot.toastEl(element)
+ *   ot.toastEl(element, { duration: 4000, placement: 'bottom-center' })
+ *   ot.toastEl(document.querySelector('#my-template'))
  */
 
-const lm = window.lm || (window.lm = {});
+const ot = window.ot || (window.ot = {});
 
 const containers = {};
 const DEFAULT_DURATION = 4000;
@@ -67,7 +67,7 @@ function show(toast, options = {}) {
 }
 
 // Simple text toast.
-lm.toast = function (message, title, options = {}) {
+ot.toast = function (message, title, options = {}) {
   if (typeof message === 'object' && message !== null) {
     options = message;
     message = '';
@@ -101,7 +101,7 @@ lm.toast = function (message, title, options = {}) {
 };
 
 // Element-based toast.
-lm.toastEl = function (el, options = {}) {
+ot.toastEl = function (el, options = {}) {
   let toast;
 
   if (el instanceof HTMLTemplateElement) {
@@ -140,7 +140,7 @@ function removeToast(toast, container) {
 }
 
 // Clear all toasts.
-lm.toast.clear = function (placement) {
+ot.toast.clear = function (placement) {
   if (placement && containers[placement]) {
     containers[placement].innerHTML = '';
     containers[placement].hidePopover();

@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}{{ config.title }} - Semantic UI Components{% endblock %}
+{% block title %}{{ config.extra.description }}{% endblock %}
 
 {% block content %}
 <div style="margin-bottom: var(--space-12);">
-  <h1 style="font-size: var(--text-2); margin-bottom: var(--space-4);">lmui</h1>
-  <p style="color: var(--muted-foreground)">
-    A strict, minimal, semantic-first UI component library with zero dependencies.
-    Semantic tags and attributes are styled out of the box with few classes, thereby forcing best practices.
-    Components with dynamic behaviour are WebComponents.
+  <h1>Oat</h1>
+  <p>
+    An ultra-lightweight HTML + CSS + minimal JS, semantic UI component library with zero dependencies.
+    No framework or build or dev dependencies of any kind. Just include the tiny CSS and JS bundles.
   </p>
+  <p>
+    Semantic tags and attributes are styled contextually out of the box without classes, thereby forcing best practices.
+    A few dynamic components are WebComponents.
+  </p>
+  <br />
   <div>
     <a href="/components/" class="button">Browse components</a>
     <a href="/usage/" class="button outline">Get started</a>
@@ -18,23 +22,23 @@
 
 <div
   style="display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, 1fr); margin-bottom: var(--space-12);">
-  <article>
+  <article class="card">
     <header>
       <h3>Lightweight</h3>
     </header>
     <p>~00KB CSS, ~00KB JS minified + gzipped.</p>
   </article>
 
-  <article>
+  <article class="card">
     <header>
       <h3>Zero dependencies</h3>
     </header>
     <p>Fully-standalone with no dependencies on any JS or CSS frameworks.
-      Components with dynamic behaviour are self-contained vanilla-Javascript WebComponents.
+      No framework or library bloat. No dependencies on the messy NodeJS ecosystem.
     </p>
   </article>
 
-  <article>
+  <article class="card">
     <header>
       <h3>Semantic HTML</h3>
     </header>
@@ -43,7 +47,7 @@
       like <code>role="button"</code> are styled directly. No classes.</p>
   </article>
 
-  <article>
+  <article class="card">
     <header>
       <h3>Accessibility</h3>
     </header>
@@ -51,7 +55,7 @@
       Full keyboard navigation support for all components and elements.</p>
   </article>
 
-  <article>
+  <article class="card">
     <header>
       <h3>Themes</h3>
     </header>

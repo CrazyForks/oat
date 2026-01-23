@@ -9,35 +9,35 @@ title = "Usage"
 Include the CSS and JS files directly in your HTML:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/lmui/dist/longterm.css">
-<script src="https://unpkg.com/lmui/dist/longterm.js" defer></script>
+<link rel="stylesheet" href="https://unpkg.com/oat-ui/dist/oat.css">
+<script src="https://unpkg.com/oat-ui/dist/oat.js" defer></script>
 ```
 
 ### npm
 
 ```bash
-npm install lmui
+npm install oat-ui
 ```
 
 Then import in your project:
 
 ```js
-import 'lmui/dist/longterm.css';
-import 'lmui/dist/longterm.js';
+import 'oat-ui/dist/oat.css';
+import 'oat-ui/dist/oat.js';
 ```
 
 ### Download
 
-Download the CSS and JS files from the [releases page](https://github.com/yourusername/lmui/releases) and include them in your project.
+Download the CSS and JS files from the [releases page](https://github.com/yourusername/oat-ui/releases) and include them in your project.
 
 ```html
-<link rel="stylesheet" href="./longterm.min.css">
-<script src="./longterm.min.js" defer></script>
+<link rel="stylesheet" href="./oat.min.css">
+<script src="./oat.min.js" defer></script>
 ```
 
 ## Basic usage
 
-lmui styles semantic HTML elements by default. No classes needed for basic styling:
+Oat styles semantic HTML elements by default. No classes needed for basic styling:
 
 ```html
 <!DOCTYPE html>
@@ -46,8 +46,8 @@ lmui styles semantic HTML elements by default. No classes needed for basic styli
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My App</title>
-  <link rel="stylesheet" href="longterm.css">
-  <script src="longterm.js" defer></script>
+  <link rel="stylesheet" href="oat.css">
+  <script src="oat.js" defer></script>
 </head>
 <body>
   <h1>Hello World</h1>

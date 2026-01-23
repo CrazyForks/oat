@@ -9,8 +9,8 @@ Use native `<details>` and `<summary>` for collapsible content.
 {% demo() %}
 ```html
 <details>
-  <summary>What is lmui?</summary>
-  <p>lmui is a minimal, semantic-first UI component library with zero dependencies.</p>
+  <summary>What is Oat?</summary>
+  <p>Oat is a minimal, semantic-first UI component library with zero dependencies.</p>
 </details>
 
 <details>
