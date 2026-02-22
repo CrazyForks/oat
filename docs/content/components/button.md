@@ -38,9 +38,9 @@ Wrap buttons in `<menu class="buttons">` for connected buttons.
 {% demo() %}
 ```html
 <menu class="buttons">
-  <button class="outline">Left</button>
-  <button class="outline">Center</button>
-  <button class="outline">Right</button>
+  <li><button class="outline">Left</button></li>
+  <li><button class="outline">Center</button></li>
+  <li><button class="outline">Right</button></li>
 </menu>
 ```
 {% end %}
