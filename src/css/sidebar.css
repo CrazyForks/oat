@@ -1,7 +1,6 @@
 @layer components {
   :root {
-    --topnav-height: var(--space-12);
-    --sidebar-width: 14rem;
+    --_nh: var(--space-12);
   }
 
   [data-sidebar-layout] {
@@ -9,13 +8,13 @@
     --topnav-scroll-offset: 0px;
 
     display: grid;
-    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-columns: 14rem 1fr;
     min-height: 100dvh;
     gap: var(--space-4);
 
     &:has(nav[data-topnav]) {
-      --topnav-offset: var(--topnav-height);
-      --topnav-scroll-offset: calc(var(--topnav-height) + var(--space-6));
+      --topnav-offset: var(--_nh);
+      --topnav-scroll-offset: calc(var(--_nh) + var(--space-6));
     }
 
     > main {
@@ -37,7 +36,6 @@
       border-inline-end: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      width: var(--sidebar-width);
 
       > :is(header, footer) {
         flex-shrink: 0;
@@ -93,11 +91,8 @@
 
         summary {
           justify-content: flex-start;
-          gap: var(--space-2);
           padding: var(--space-2) var(--space-3);
           font-size: var(--text-7);
-          font-weight: var(--font-medium);
-          color: var(--foreground);
           border-radius: var(--radius-small);
 
           &::after {
@@ -112,10 +107,9 @@
 
   nav[data-topnav] {
     position: fixed;
-    inset-block-start: 0;
-    inset-inline: 0;
+    inset: 0 0 auto;
     z-index: 5;
-    min-height: var(--topnav-height);
+    min-height: var(--_nh);
     display: flex;
     align-items: center;
     gap: var(--space-3);
@@ -137,31 +131,33 @@
     cursor: pointer;
   }
 
-  [data-sidebar-layout="always"] [data-sidebar-toggle] {
-    display: inline-block;
-  }
-
-  [data-sidebar-layout="always"] {
-    transition: grid-template-columns var(--transition);
-
-    > aside[data-sidebar] {
-      transform: translateX(0);
-      opacity: 1;
-      transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
+  @media (min-width: 769px) {
+    [data-sidebar-layout="always"] [data-sidebar-toggle] {
+      display: inline-block;
     }
-  }
 
-  [data-sidebar-layout="always"][data-sidebar-open] {
-    grid-template-columns: 0px 1fr;
-    gap: 0;
+    [data-sidebar-layout="always"] {
+      transition: grid-template-columns var(--transition);
 
-    > aside[data-sidebar] {
-      overflow: hidden;
-      min-width: 0;
-      transform: translateX(-100%);
-      opacity: 0;
-      visibility: hidden;
-      border-inline-end: none;
+      > aside[data-sidebar] {
+        transform: translateX(0);
+        opacity: 1;
+        transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
+      }
+    }
+
+    [data-sidebar-layout="always"][data-sidebar-open] {
+      grid-template-columns: 0px 1fr;
+      gap: 0;
+
+      > aside[data-sidebar] {
+        overflow: hidden;
+        min-width: 0;
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        border-inline-end: none;
+      }
     }
   }
 
@@ -171,9 +167,7 @@
 
       > aside[data-sidebar] {
         position: fixed;
-        top: var(--topnav-offset);
         left: 0;
-        height: calc(100dvh - var(--topnav-offset));
         width: 16rem;
         transform: translateX(-100%);
         transition: transform var(--transition);
@@ -184,17 +178,6 @@
         transform: translateX(0);
       }
     }
-    [data-sidebar-layout="always"][data-sidebar-open] {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-
-      > aside[data-sidebar] {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-      }
-    }
-
     [data-sidebar-toggle] { display: inline-block; }
 
     [data-sidebar-header] {
