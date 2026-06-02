@@ -8,6 +8,7 @@
       display: inline-flex;
       align-items: center;
       gap: var(--space-2);
+      row-gap: 0;
       font-weight: var(--font-normal);
     }
   }
@@ -235,6 +236,7 @@
 
   [data-field] {
     margin-block-end: var(--space-4);
+    flex-wrap: wrap;
 
     /* Hint text that succeeds an input with aria-describedby */
     [data-hint], .error {
@@ -242,6 +244,9 @@
       font-weight: var(--font-normal);
       color: var(--muted-foreground);
       margin-block-start: var(--space-1);
+      display: block;
+      flex-basis: 100%;
+      min-inline-size: 100%;
     }
 
     .error {

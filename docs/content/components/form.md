@@ -65,6 +65,7 @@ Form elements are styled automatically. Wrap inputs in `<label>` for proper asso
 
   <label data-field>
     <input type="checkbox" /> I agree to the terms
+    <span data-hint>This is a hint</span>
   </label>
 
   <fieldset class="hstack">
@@ -77,6 +78,13 @@ Form elements are styled automatically. Wrap inputs in `<label>` for proper asso
   <label data-field>
     Volume
     <input type="range" min="0" max="100" value="50" />
+    <span data-hint>This is a hint</span>
+  </label>
+
+  <label data-field>
+    State
+    <input type="checkbox" role="switch" />
+    <span data-hint>This is a hint</span>
   </label>
 
   <button type="submit">Submit</button>
