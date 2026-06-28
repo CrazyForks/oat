@@ -15,7 +15,7 @@
   }
 
   /* Top-layer elements don't inherit from body. Set explicitly. */
-  body, dialog, [popover] {
+  body, dialog, [popover], textarea {
     font-family: var(--font-sans);
     font-size: var(--text-regular);
     line-height: var(--leading-normal);
